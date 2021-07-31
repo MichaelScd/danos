@@ -41,7 +41,7 @@ jobs:
           mkdir -p config/archives/
           
           cd ./config/archives
-          echo 'deb http://s3-us-west-1.amazonaws.com/repos.danosproject.org/repo/ 2105 main' > danos.list.chroot
+          echo 'deb http://s3-us-west-1.amazonaws.com/2105.repos.danosproject.org/repo/ 2105 main' > danos.list.chroot
           echo -e 'Package: *\nPin: release o=DANOS\nPin-Priority: 1000' > danos.pref.chroot
           sudo wget https://s3-us-west-1.amazonaws.com/repos.danosproject.org/Release.key -O danos.key.chroot
           cd ../..
