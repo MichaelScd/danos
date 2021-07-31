@@ -49,7 +49,7 @@ jobs:
           sed -i 's/--yes/--yes --force-yes/' auto/config
           
           sudo auto/config
-          sudoku auto/build
+          sudo auto/build
           
           
 
