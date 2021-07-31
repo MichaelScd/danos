@@ -32,7 +32,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          apt install live-build cpio wget ca-certificates apt-utils
+          sudo apt install live-build cpio wget ca-certificates apt-utils
           
           wget https://s3-us-west-1.amazonaws.com/repos.danosproject.org/2005/livebuild/danos-2005-base-Build2.4.livebuild.tar
           tar xf *livebuild.tar
