@@ -34,19 +34,19 @@ jobs:
         run: |
           sudo apt install live-build cpio wget ca-certificates apt-utils
           
-          wget https://s3-us-west-1.amazonaws.com/repos.danosproject.org/2005/livebuild/danos-2005-base-Build2.4.livebuild.tar
+          wget https://s3.us-west-1.amazonaws.com/2105.repos.danosproject.org/2105/livebuild/danos-2105-base-Build2.1.livebuild.tar
           tar xf *livebuild.tar
-          cd danos-2005-base
+          cd danos-2105-base
           
           mkdir -p config/archives/
           
           cd ./config/archives
-          echo 'deb http://s3-us-west-1.amazonaws.com/repos.danosproject.org/repo/ 2005 main' > danos.list.chroot
+          echo 'deb http://s3-us-west-1.amazonaws.com/repos.danosproject.org/repo/ 2105 main' > danos.list.chroot
           echo -e 'Package: *\nPin: release o=DANOS\nPin-Priority: 1000' > danos.pref.chroot
-          wget https://s3-us-west-1.amazonaws.com/repos.danosproject.org/Release.key -O danos.key.chroot
+          sudo wget https://s3-us-west-1.amazonaws.com/repos.danosproject.org/Release.key -O danos.key.chroot
           cd ../..
           
-          sed -i 's/--yes/--yes --force-yes/' auto/config
+          sudo sed -i 's/--yes/--yes --force-yes/' auto/config
           
           sudo auto/config
           sudo auto/build
